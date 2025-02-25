@@ -75,6 +75,7 @@ export default Vue.extend({
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90%;
+  min-width: 25em;
   max-height: 90%;
   overflow: hidden;
   background-color: white;

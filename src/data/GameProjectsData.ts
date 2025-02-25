@@ -53,7 +53,7 @@ export default [
         
 
         `Collection of hypercasual mobile games`,
-        `The Knight Games series is a collection of mini hyper-casual games I developed solo, with very short development cycles, using Unity. I used DOTween and Cinemachine to create a dynamic 3D gameplay.
+        `The Knight Games series is a collection of mini hyper-casual games I developed solo, with very short development cycles, using Unity. I used DOTween and Cinemachine to create dynamic 3D gameplay.
         <h3> Challenges faced:</h3>
         <ul>
         <li>Going from an idea on paper to a published game in a matter of weeks </li>
@@ -65,10 +65,10 @@ export default [
             <img title= "Screenshot" src="img/2025-02-03_163234.png"/ >
         `,),
     new ProjectData("project-3", "DSN : Une Aventure Bloquissime", "img/projects/DSN_thumbnail.png", ``, `
-    "Serious game" developed at Urssaf focusing on an administrative regulation called "Déclaration Sociale Nominative" 
+    "Serious game" developed at Urssaf focusing on an administrative process called "Déclaration Sociale Nominative" 
     `,
     `
-    ‘DSN : Une Aventure Bloquissime’ is a serious game focusing on a dense administrative process for french businesses called ‘Déclaration Sociale Nominative’. The game was created to acculturate Urssaf employees on this important internal topic.
+    ‘DSN : Une Aventure Bloquissime’ is a serious game focusing on a dense administrative process for France's legal businesses called ‘Déclaration Sociale Nominative’. The game was created to acculturate Urssaf employees on this important internal topic.
     <h2>Challenges faced</h2>
     <ul>
     <li>Finding the right balance between fun and learning through game design and writing</li>
