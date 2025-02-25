@@ -11,7 +11,7 @@ export default [
     `,` `, false, true),
     new ProjectData("project-7", "The Meadow", "img/projects/the_meadow.png",
       `<a target="_blank"class=icon href="https://t.me/ambientmeadow">
-    <img title= "Ambient Meadow on Telegram" src="img/icons/web.png" ></a>`,
+    <img title= "Ambient Meadow on Telegram" src="img/icons/WEB.png" ></a>`,
 
       `<div class="paragraph"> Public Telegram channel curating ambient music </div>`,
       ` `),

@@ -15,7 +15,7 @@
       </div>
       <br>
       <div>
-        After I graduated as an computer science engineer in 2022, I embraced my creative side and took a Masters at GOBELINS, where I learned about game design, producing and creative direction.
+        After I graduated as a computer science engineer in 2022, I embraced my creative side and took a Masters at GOBELINS, where I learned about game design, producing, and creative direction.
       </div>
       <br>
       <div>

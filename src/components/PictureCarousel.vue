@@ -1,8 +1,8 @@
 <template>
     <div class="carousel">
       <div class="carousel-container" ref="carouselContainer">
-        <div class="carousel-item" v-for="(image, index) in images" :key="index">
-          <img :src="image" :alt="'Image ' + (index + 1)" />
+        <div class="carousel-item" v-for="(picture, index) in pictures" :key="index">
+          <img :src="picture" :alt="'Image ' + (index + 1)" />
         </div>
       </div>
       <button class="carousel-button left" @click="scrollLeft">‹</button>
@@ -14,7 +14,7 @@
 export default {
   name: "PictureCarousel",
   props: {
-    images: {
+    pictures: {
       type: Array,
       required: true,
     },

@@ -10,6 +10,13 @@
             <i class="fa fa-times fa-lg fa-fw"></i>
           </div>
           <div class="scrollable-content" v-html="htmlContent"></div>
+
+
+          <PictureCarousel
+            v-if="pictures && pictures.length > 0"
+            :pictures="pictures"
+          />
+
           <div class="dialog-bottom">
             <a @click="$emit('close')" class="dialog-close-button">Close</a>
           </div>
@@ -21,6 +28,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import PictureCarousel from "./PictureCarousel.vue";
 
 export default Vue.extend({
   name: "ProjectDetailsOverlay",
@@ -30,7 +38,10 @@ export default Vue.extend({
     title: String,
     htmlContent: String,
     htmlLinks: String,
-    pictures: [],
+    pictures: {
+      type: Array,
+      default: () => [],
+    }
   },
   methods: {
     getImage: function (url: string) {
@@ -126,6 +137,11 @@ a.dialog-close-button {
 .project-item-desc-links {
   justify-content: center; /* Center the image horizontally */
   align-items: center;
+}
+
+.scrollable-content ::v-deep img  {
+  max-width:80%;
+  max-height: 50%;
 }
 
 
