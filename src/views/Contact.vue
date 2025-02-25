@@ -3,13 +3,10 @@
     
     <h1>Let's get in touch</h1>
 
+    <!--
     <div style="margin-bottom:40px;">Feel free to contact me about any opportunity, or just to chat.</div>
-
+-->
     <ul>
-      <li>
-        <i class="fa fa-user-circle-o fa-lg fa-fw"></i>
-        <a href="https://rouli-m.github.io" target="_blank">rouli-m.github.io</a>
-      </li>
       <li>
         <i class="fa fa-envelope-o fa-lg fa-fw"></i>
         <a href="mailto:martin.loiseau49@gmail.com" target="_blank">martin.loiseau49@gmail.com</a>

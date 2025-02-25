@@ -124,4 +124,26 @@ h1 {
   
 }
 
+.project-item-desc-links {
+  filter:invert(15%) sepia(29%) saturate(7021%) hue-rotate(254deg) brightness(99%) contrast(138%);
+  width: 100%;
+  max-height: 2em; /* Adjust as needed */
+  /* border: 1px solid #ccc;  Optional: for visualization */
+  overflow: hidden; /* Ensure content does not overflow */
+  display: flex;
+  justify-content: left; /* Center the image horizontally */
+  align-items: left; 
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.project-item-desc-links .icon img
+{ 
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure the image is contained within the parent without being cropped */
+  display: block; /* Remove bottom space in some browsers */
+}
+
+
 </style>

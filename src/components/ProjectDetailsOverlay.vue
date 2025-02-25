@@ -1,16 +1,18 @@
 <template>
   <transition name="fade">
     <div v-if="visible">
-      <div class="overlay">
-      </div>
-      <div class="dialog" :style="{ 'background-color': color }">
-        <h1 class="dialog-title">{{ title }}</h1>
-        <div @click="$emit('close')" class="dialog-close"><i class="fa fa-times fa-lg fa-fw"></i></div>
+      <div class="overlay"></div>
+      <div class="dialog fixed-popup" :style="{ 'background-color': color }">
         <div class="dialog-content">
-          <div v-html="htmlContent"></div>
+          <h1 class="dialog-title">{{ title }}</h1>
+          <div class="project-item-desc-links" v-html="htmlLinks"></div>
+          <div @click="$emit('close')" class="dialog-close">
+            <i class="fa fa-times fa-lg fa-fw"></i>
+          </div>
+          <div class="scrollable-content" v-html="htmlContent"></div>
           <div class="dialog-bottom">
-          <a @click="$emit('close')" class="dialog-close-button">Close</a>
-        </div>
+            <a @click="$emit('close')" class="dialog-close-button">Close</a>
+          </div>
         </div>
       </div>
     </div>
@@ -27,64 +29,85 @@ export default Vue.extend({
     color: String,
     title: String,
     htmlContent: String,
+    htmlLinks: String,
+    pictures: [],
   },
   methods: {
-    getImage: function(url: string) {
+    getImage: function (url: string) {
       console.log("fetching image " + url);
-    }
-  }
+    },
+  },
 });
 </script>
 
 <style scoped>
 .overlay {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
-  position:fixed;
-  top:0px;
-  left:0px;
-  right:0px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   bottom: 0px;
 }
 
 .dialog {
-  position:absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
   z-index: 11;
   margin: 20px;
   padding-bottom: 10px;
-  color:white;
+  color: white;
 }
 
-iframe {
+.fixed-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.iframe {
   width: 100%;
 }
 
 h1.dialog-title {
-    text-align: center;
-    font-size: 1.3em;
-    margin: 0px;
-    padding: 22px;
+  text-align: center;
+  font-size: 1.3em;
+  margin: 0px;
+  padding: 22px;
 }
 
 .dialog-content {
   padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.scrollable-content {
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .dialog-content {
   background-color: #fcfcfc;
   color: #696969;
+  border-radius: 15px;
 }
+
 .dialog-close {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 1.2em;
   font-weight: 100;
 }
+
 .dialog-close:hover {
   opacity: 0.6;
 }
@@ -94,17 +117,23 @@ h1.dialog-title {
 }
 
 a.dialog-close-button {
-  cursor:pointer;
+  cursor: pointer;
   font-size: 1.4em;
   display: inline-block;
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 620px){
+.project-item-desc-links {
+  justify-content: center; /* Center the image horizontally */
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 620px) {
   .dialog {
     margin: 0 auto;
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 0;
+    margin-bottom:0;
     max-width: 1000px;
   }
 
@@ -116,6 +145,4 @@ a.dialog-close-button {
     padding: 40px;
   }
 }
-
-
 </style>
