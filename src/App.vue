@@ -67,6 +67,7 @@ a {
   text-decoration: none;
   opacity: 0.5;
 }
+
 a:hover, .router-link-exact-active {
   opacity: 1;
 }
@@ -88,7 +89,7 @@ h1 {
 
   #app {
     text-align: left;
-    line-height: 1.8em;
+    line-height: 1.8em; // removing this makes text bigger
   }
 
   h1 {
@@ -137,10 +138,11 @@ h1 {
   padding-bottom: 5px;
 }
 
-.project-item-desc-links .icon img
+.project-item-desc-links .icon img // this doesnt seem to apply in popup: why?
 { 
   max-width: 100%;
   max-height: 100%;
+  //max-width: 2em;
   object-fit: contain; /* Ensure the image is contained within the parent without being cropped */
   display: block; /* Remove bottom space in some browsers */
 }

@@ -138,13 +138,13 @@ a.dialog-close-button {
 .project-item-desc-links {
   justify-content: center; /* Center the image horizontally */
   align-items: center;
+  max-height: 2em;
 }
 
-.scrollable-content ::v-deep img  {
+.scrollable-content ::v-deep img  { /* max any picture fit inside scrollable content*/
   max-width:80%;
   max-height: 50%;
 }
-
 
 @media only screen and (min-width: 620px) {
   .dialog {

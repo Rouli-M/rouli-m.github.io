@@ -4,7 +4,7 @@
         <template v-for="project in projects">
           <div :key="project.id" class="project-item" :class="{ 'wide': project.isWide, 'high': project.isHigh }">
 
-                <div class="project-item-image" :style="{ 'background-image': 'url(' + project.iconUrl + ')' }">
+                <div class="project-item-image"  @mouseover="hoverOver(project)" @mouseout="hoverOut(project)" :style="backgroundImageStyle(project)">
                 </div>
 
                 <div class="project-item-desc">
@@ -54,7 +54,9 @@ export default Vue.extend({
       popupTitle: "",
       popupContent: "",
       popupLinks:"",
-      popupPictures:{}
+      popupPictures:{},
+      imageSrc:"",
+      hoveredProject:""
     };
   },
   methods: {
@@ -66,8 +68,27 @@ export default Vue.extend({
       this.showPopup = true;
       //window.scrollTo(0,0);
     },
+    hoverOver: 
+    function (item: ProjectData) {
+      this.hoveredProject=item.id;
+      //this.imageSrc = item.iconUrl;
+    },
+    hoverOut: 
+    function (item: ProjectData) {
+      this.hoveredProject="";
+    },
+    backgroundImageStyle(item: ProjectData)
+    {
+      if(item.id == this.hoveredProject && item.gifUrl.length > 0)
+        return {'background-image': 'url(' + item.gifUrl + ')' }
+      else
+        return {'background-image': 'url(' + item.iconUrl + ')' } 
+    }
   },
 });
+
+
+
 </script>
 
 <style scoped>

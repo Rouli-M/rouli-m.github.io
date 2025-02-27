@@ -32,15 +32,20 @@
           <embed src="https://www.codeur.com/tuto/wp-content/uploads/2022/02/pdf-test.pdf" width="800" height="500" type="application/pdf"/>
           -->
           <div style="margin-top:20px; margin-bottom:20px;"></div>
-          <a target="_blank" class="download-link" href="d/resume_portfolio_EN.pdf"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF 🇬🇧</a>
-          <a target="_blank" class="download-link" href="d/resume_portfolio_FR.pdf"><i class="fa fa-download fa-lg fa-fw"></i> Télécharger en PDF 🇫🇷</a>
+          <a target="_blank" class="download-link" href="d/Resume Martin Loiseau.pdf"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF 🇬🇧</a>
+          <a target="_blank" class="download-link" href="d/CV Martin Loiseau.pdf"><i class="fa fa-download fa-lg fa-fw"></i> Télécharger en PDF 🇫🇷</a>
             <div style="clear:both"></div>
           
         </div>
     </div>
 
     <div class="photo">
-      <img class="welcome_photo" src="img/welcome.png" alt="some of my characters" /> 
+      
+        <img class="welcome_photo" src="img/welcome.png" alt="some of my characters" /> 
+      <!--
+        <img class="welcome_photo" src="img/gifs/mask_animated3.gif" alt="The mask" /> 
+        -->
+
     </div>
 
     <div style="clear:both"></div>
@@ -67,7 +72,8 @@
   }
 
   .photo {
-    float: right;
+    float:right;
+    
     width: 35%; /* Adjusted width */
     padding: 10px;
     padding-left: 30px; /* Adjusted padding */

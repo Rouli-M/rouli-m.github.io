@@ -1,7 +1,7 @@
 import ProjectData from '@/data/ProjectData.ts'
 
 export default [
-    new ProjectData("project-1", "Mask Around", "img/projects/mask_around_thumbnail.png", 
+    new ProjectData("project-1", "Mask Around", "img/projects/mask_around_thumbnail.png", "img/gifs/mask_around.gif",
     ` <a target="_blank"class=icon href="https://store.steampowered.com/app/2849230/Mask_Around/">
     <img title="Mask Around on Steam" src="img/icons/steam.png"></a>
 
@@ -40,7 +40,7 @@ export default [
         "img/vlcsnap-2024-11-06-18h17m09s464.png"
     ]
 ),
-    new ProjectData("project-2", "Knight Games", "img/projects/knight_thumbnail.png", 
+    new ProjectData("project-2", "Knight Games", "img/projects/knight_thumbnail.png", "img/gifs/knight_vs2.gif",
 
         `<a target="_blank"class=icon href="https://play.google.com/store/apps/details?id=com.rouli.knightvsastronomer">
         <img title= "Knight VS Astronomer on Google Play Store" src="img/icons/playstore.png"/ ></a>
@@ -64,7 +64,7 @@ export default [
             <img title= "Screenshot" src="img/2025-02-13_212704.png"/ >
             <img title= "Screenshot" src="img/2025-02-03_163234.png"/ >
         `,),
-    new ProjectData("project-3", "DSN : Une Aventure Bloquissime", "img/projects/DSN_thumbnail.png", ``, `
+    new ProjectData("project-3", "DSN : Une Aventure Bloquissime", "img/projects/DSN_thumbnail.png",  "img/gifs/dsn.gif",``, `
     "Serious game" developed at Urssaf focusing on an administrative process called "Déclaration Sociale Nominative" 
     `,
     `
@@ -78,7 +78,7 @@ export default [
     </ul> 
     <img title= "Screenshot" src="img/Annotation 2023-09-06 095523.PNG.jpg"/ >
     <img title= "Screenshot" src="img/Annotation 2023-09-06 100410.jpg"/ >`,),
-    new ProjectData("project-4", "All That Glitters", "img/projects/ATG_thumbnail.png",
+    new ProjectData("project-4", "All That Glitters", "img/projects/ATG_thumbnail.png","img/gifs/atg_small_gif2.gif",
         `<a target="_blank"class=icon href="https://store.steampowered.com/app/3288100/All_That_Glitters/">
     <img title="All That Glitters on Steam" src="img/icons/steam.png"/ ></a>`,
         
@@ -95,7 +95,7 @@ export default [
     <img title= "Screenshot" src="img/projects/ss_cb73b9920ad8f8cdc85373532493f05860caf4ac.600x338.jpg"/ >
     <img title= "Screenshot" src="img/projects/ss_bb364f406c93f680cb6b23f66591b7ad147c6ba6.600x338.jpg"/ >
     <img title= "Screenshot" src="img/projects/ATG_thumbnail.png"/ >`),
-    new ProjectData("project-5", "Plant Down", "img/projects/plant_down_thumbnail.png", 
+    new ProjectData("project-5", "Plant Down", "img/projects/plant_down_thumbnail.png", "img/gifs/plant_down.gif",
         ` <a target="_blank"class=icon href="https://rouli.itch.io/plant-down">
         <img title= "Plant Down on itch.io" src="img/icons/itch.png"/ ></a>
     
