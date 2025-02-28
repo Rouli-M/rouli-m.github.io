@@ -135,10 +135,12 @@ a.dialog-close-button {
   margin: 0 auto;
 }
 
+
 .project-item-desc-links {
   justify-content: center; /* Center the image horizontally */
   align-items: center;
-  max-height: 2em;
+  
+   /*border: 1px solid red;  Temporary border to visualize images */
 }
 
 .scrollable-content ::v-deep img  { /* max any picture fit inside scrollable content*/

@@ -149,10 +149,6 @@ export default Vue.extend({
   cursor: pointer;
 }
 
-.project-item-desc-see-more:hover {
-  text-decoration:blueviolet;
-}
-
 h3 { 
     display: block;
     font-size: 1.3em;
