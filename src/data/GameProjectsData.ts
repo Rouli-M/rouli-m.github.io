@@ -41,8 +41,10 @@ export default [
     ]
 ),
     new ProjectData("project-2", "Knight Games", "img/projects/knight_thumbnail.png", "img/gifs/knight_vs2.gif",
+        `<a target="_blank"class=icon href="https://play.google.com/store/apps/details?id=com.rouli.knighttower">
+        <img title= "Knight Tower on Google Play Store" src="img/icons/playstore.png"/ ></a>
 
-        `<a target="_blank"class=icon href="https://play.google.com/store/apps/details?id=com.rouli.knightvsastronomer">
+        <a target="_blank"class=icon href="https://play.google.com/store/apps/details?id=com.rouli.knightvsastronomer">
         <img title= "Knight VS Astronomer on Google Play Store" src="img/icons/playstore.png"/ ></a>
         
         <a target="_blank"class=icon href="https://rouli.itch.io/knight-vs-astronomer">
@@ -54,21 +56,28 @@ export default [
 
         `Collection of hypercasual mobile games`,
         `The Knight Games series is a collection of mini hyper-casual games I developed solo, with very short development cycles, using Unity. I used DOTween and Cinemachine to create dynamic 3D gameplay.
+        I experimented with other packages such as Amplitude for data collection, Linework and Kino for rendering, and implemented Google Play for ranking and achievements.
+        <br>
+        <ul>
+        <li><a href="https://play.google.com/store/apps/details?id=com.rouli.knightvsastronomer">Knight VS Astronomer</a>  was developed in one week and features a very simple cinematic boss fight, in a toon and low poly style.
+        <li><a href="https://play.google.com/store/apps/details?id=com.rouli.knighttower">Knight Tower</a> was developed in one month and introduce a fleshed out arcade/action gameplay loop, leaderboard and achievements.
+        </ul>
+
         <h3> Challenges faced:</h3>
         <ul>
-        <li>Going from an idea on paper to a published game in a matter of weeks </li>
-        <li>Creating an efficient 3D workflow</li>
+        <li>Going from an idea on paper to a published game in a very short time </li>
+        <li>Creating an efficient 3D workflow and tinkering it continuously during development</li>
         <li>Setting up a project blueprint to improve iteration speed</li>
+        <li>Leveraging packages and assets</li>
         </ul>
         
-            <img title= "Screenshot" src="img/2025-02-13_212704.png"/ >
-            <img title= "Screenshot" src="img/2025-02-03_163234.png"/ >
+            <img title= "Screenshot" src="img/projects/knightgames.png"/ >
         `,),
     new ProjectData("project-3", "DSN : Une Aventure Bloquissime", "img/projects/DSN_thumbnail.png",  "img/gifs/dsn.gif",``, `
     "Serious game" developed at Urssaf focusing on an administrative process called "Déclaration Sociale Nominative" 
     `,
     `
-    ‘DSN : Une Aventure Bloquissime’ is a serious game focusing on a dense administrative process for France's legal businesses called ‘Déclaration Sociale Nominative’. The game was created to acculturate Urssaf employees on this important internal topic.
+    ‘DSN : Une Aventure Bloquissime’ is a serious game focusing on a dense administrative process for France's legal businesses called ‘Déclaration Sociale Nominative’. The game was developed to familiarize Urssaf employees with this crucial internal subject.
     <h2>Challenges faced</h2>
     <ul>
     <li>Finding the right balance between fun and learning through game design and writing</li>

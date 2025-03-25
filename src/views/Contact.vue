@@ -100,10 +100,10 @@ li a {
 /* Define the keyframe animation */
 @keyframes rotate {
   from {
-    transform: rotate(0deg);
+    transform: scale(1);
   }
   to {
-    transform: rotate(20deg);
+    transform: scale(1.1);
   }
 }
 

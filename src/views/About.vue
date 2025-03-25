@@ -1,9 +1,13 @@
 <template>
+
+
+
   <div style="margin-bottom: 0px;">
     <!--
     <h1>Where am I?</h1>
     -->
-   
+
+    
     <div class="paragraph">
       <h2>About me</h2> 
       <div>
