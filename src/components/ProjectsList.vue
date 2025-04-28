@@ -12,7 +12,7 @@
                     <h3>{{ project.name }}</h3>
                   </div>
 
-                  <div class="project-item-desc-links" v-html=project.htmlLinks></div>
+                  <div v-if="project.htmlLinks.length > 0" class="project-item-desc-links" v-html=project.htmlLinks></div>
 
                   <div class="project-item-desc-body" v-html=project.htmlShortDescription></div>
 

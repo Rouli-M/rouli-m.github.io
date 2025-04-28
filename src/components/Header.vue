@@ -5,6 +5,7 @@
       <div class="categories">
         <router-link to="/">About</router-link>
         <router-link to="/game-projects">Games</router-link>
+        <router-link to="/tech-projects">Tech</router-link>
         <router-link to="/other-projects">Extra</router-link>
         <router-link to="/contact">Contact</router-link>
       </div>

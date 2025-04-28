@@ -15,12 +15,6 @@ export default [
 
       `<div class="paragraph"> Public Telegram channel curating ambient music </div>`,
       ` `),
-      new ProjectData("project-8", "Portfolio website", "img/projects/portfolio.png","",
-        `<a target="_blank"class=icon href="https://github.com/Rouli-M/rouli-m.github.io">
-      <img title= "Source code on Github" src="img/icons/github.png" ></a>`,
-  
-        `<div class="paragraph"> Little portfolio website you're browsing right now. Made with vue.js, source code available on github </div>`,
-        ` `),
     new ProjectData("project-9", "Linocut illustrations", "img/projects/linocut.png","", ``,
       `<div class="paragraph">
       Black and white linocut illustrations I make in my spare time</div>`,

@@ -26,7 +26,7 @@
        I worked on <router-link to="/game-projects">many games</router-link>, from little side projects to fully fleshed solo indie releases. I also worked as a serious game designer and developer at Urssaf for two years.
       </div>
 
-      <div style="margin-top: 40px;">I'm <strong>currently looking for a job</strong> as a game developer.</div>
+      <div style="margin-top: 40px;">I'm <strong>currently looking for a job</strong> as a game developer or real-time interactive engineer.</div>
       <br>
 
       <div>

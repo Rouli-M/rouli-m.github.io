@@ -4,6 +4,7 @@
         <div class="carousel-item" v-for="(picture, index) in pictures" :key="index">
           <img :src="picture" :alt="'Image ' + (index + 1)" />
         </div>
+        
       </div>
       <button class="carousel-button left" @click="scrollLeft">‹</button>
       <button class="carousel-button right" @click="scrollRight">›</button>
