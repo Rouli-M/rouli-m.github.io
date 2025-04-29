@@ -85,7 +85,7 @@ h1 {
     padding: 12px;
   }
 
-@media only screen and (min-width: 620px){
+@media only screen and (min-width: 480px){
 
   #app {
     text-align: left;
@@ -120,10 +120,7 @@ h1 {
   opacity: 0
 }
 
-.project_box
-{
-  
-}.project-item-desc-links {
+.project-item-desc-links {
   filter: invert(15%) sepia(29%) saturate(7021%) hue-rotate(254deg) brightness(99%) contrast(138%);
   width: 100%;
   height: 45.2px; /* Set a specific height for the parent */

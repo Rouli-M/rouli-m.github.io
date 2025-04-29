@@ -6,24 +6,24 @@ export default [
       `Useful Unity scripts I've built and gathered over the years `,
       ` 
       Every developer who has worked with Unity knows that there are a lot of very useful functions that are surprisingly not directly built in Unity despite being useful accross a wide range of projects.
-      I am no exception, and I have wrote over the years a variety of little useful scripts that I import in almost every project.
+      I am no exception, and I have wrote over the years a collection of useful scripts that I import in most projects.
       
       <h4>SmartAudioSource.cs</h4>
-        Playing an audio file from script in Unity can be as simple as typing "GetComponent<AudioSource>().Play()".
+        Playing an audio file from script in Unity can be as simple as typing <code>GetComponent&lt;AudioSource&gt;().Play()</code>.
         But it can get pretty verbose once you want to tweak some basic settings, like randomizing pitch, volume, or even the audio clip playing, which is a must for game-audio.
-        This is why I usually add a SmartAudioSource.cs component on all my AudioSource game objects, where I can set the aforementioned values.
-        This is especially useful for mobile game because of how lightweight this solution is. For bigger games, I tend to use FMOD.
+        This is why I usually add a <code>SmartAudioSource.cs</code> component on all my AudioSource game objects, where I can set the aforementioned values.
+        This is especially useful for mobile games because of how lightweight this solution is. For bigger games, I tend to use FMOD.
 
       <h4><a href="https://github.com/Rouli-M/KnightVSAstronomer/blob/main/KnightVSAstronomeerUnity/Assets/HandyBehaviour.cs">  HandyBehaviour.cs</a></h4>
       <div  style="text-align: center;">
-      <img title= "CICD for Groupement U" src="img/tech/unity_thumbnail.png"/>
+      <img title= "Code implementation of HandyBehaviour" src="img/tech/unity_thumbnail.png"/>
       </div>
       
       It took me a while to master all the twists of Unity's animation system. The biggest issue I faced was understand how to properly trigger event depending on animation timing.
         As it turns out, using Unity's Animation Events isn't recommended if you use the Animation Graph, as the events can sometimes be skipped if played either early or late during the animation state.
-        I ended up writing my implementation of the AnimationBehaviour that I named CustomEventBehaviour.cs to easily subscribe to Animator's state changes, by only specifying the name of a state. 
+        I ended up writing my implementation of the AnimationBehaviour that I named <code>HandyBehaviour.cs</code> to easily subscribe to Animator's state changes, by only specifying the name of a state. 
         The only downside of this technique is that you have to subscribe to the events everytime the GameObject is Enabled for it to work properly.
-        You can see this script being used in my little mobile game Knight VS Astronomer <a href="https://github.com/Rouli-M/KnightVSAstronomer/blob/main/KnightVSAstronomeerUnity/Assets/HandyBehaviour.cs">  here</a>.
+        You can see this script being used in my little mobile game <i>Knight VS Astronomer</i> <a href="https://github.com/Rouli-M/KnightVSAstronomer/blob/main/KnightVSAstronomeerUnity/Assets/HandyBehaviour.cs"  target="_blank" >  here on GitHub</a>.
         
       <h4>SaveData.cs</h4>
         They are several way to save and retrieve game data, and I tend to gravitate towards the same logic for games I work on, which led me to creating this generic C# class.
@@ -32,10 +32,17 @@ export default [
         
         My static class <code>SaveData</code> does just that: by customizing the subclass <code>DataContent</code> with the data structure I need, I can then simply call SaveData.Save() and SaveData.Load(), and read the save data from anywhere with a simple SaveData.content, making full use of the singleton pattern.
 
-      <h4> <a href="https://gist.github.com/onevcat/6025819"> MonoSingleton.cs </a></h4>
-        While I didn't write this script myself, it is so convenient that I was quick to add it to my little collection. <a href="https://gist.github.com/onevcat/6025819"> MonoSingleton.cs </a> allows me to implement the singleton pattern on any MonoBehaviour object by simply inheriting from this class: now, I can get the reference of this objects from anywhere in the code. This is especially useful for "managers" such as AudioManager, GameManager, etc.
+      <h4> <a href="https://gist.github.com/onevcat/6025819"  target="_blank" > MonoSingleton.cs </a></h4>
+        While I didn't write this script myself, it is so convenient that I was quick to add it to my toolbox. <a href="https://gist.github.com/onevcat/6025819"> MonoSingleton.cs </a> allows me to implement the singleton pattern on any MonoBehaviour object by simply inheriting from this class: now, I can get the reference of this objects from anywhere in the code. This is especially useful for "managers" such as AudioManager, GameManager, etc.
         <br>
-        
+
+        <h4>Editor Scripts</h4>
+        Lastly, while not a specific script, I heavily rely on Editor Scripts for level design tools. Editor scripts have the advantage of being excluded from builds, making them purely intended as tools for developers and designers, rather than requiring production-level code and integration.
+        <br><br><img src="img/tech/dark_tree.png">
+<br>
+        Here's one example of an editor script that I wrote: the <i>DarkTree</i> is a gameplay element in my roguelike project Mask Around. The <i>DarkTree</i> branches follow a smart tiling behaviour, using Unity's tiling system for the level design. However, these branches have to be instantiated as regular game objects too, in order to be destroyed following a specific procedural animation. To avoid the heavy cost of instantiating the branches at runtime, I wrote an editor script allowing me to click a button inside the Editor to "build" the tree and instantiate the branches.
+        You can see the full script here:  <a href="https://gist.github.com/Rouli-M/3daeaf709d947dac632c923c0ac62cde"  target="_blank" >DarkTreeEditor.cs on GitHub</a>
+          <br>
         `, false, true),
     new ProjectData("project-tech1", "CICD Pipelines", "img/tech/u-cicd_thumbnail.png","",
       ``,
@@ -55,8 +62,7 @@ export default [
       <li> <b>Python</b> scripts are the implementation of existing builder and deployer scripts within Groupement U's infrastructure</li>
       <li>Legacy <b>kornshell</b> scripts, running directly on the server, were used and tweaked to properly communicate with Informatica's backend. The builder running inside Docker had to call these scripts using a custom SSH request.</li>
       </ul>
-      <br>
-
+      
       <h3> For Mask Around </h3>
       Years later, I faced a situation were setting up CICD pipelines was relevant again. For my game project <i>Mask Around</i>, I was targeting 5 different types of builds:
       <ul>
@@ -67,7 +73,7 @@ export default [
       <li> Android standalone build Free (with a specific prompt to buy premium)
       </ul>
       The differences between these builds were minor, but it was still a long process to build each one manually, especially considering that the game was frequently updated.
-      With the help of a friend specialized in DevOps, we set up a build pipeline leveraging GitHub actions, since the project was already hosted on github.
+      With the help of a friend specialized in DevOps, we set up a build pipeline leveraging GitHub actions, since the project was already hosted on GitHub.
       <br>
       <br>
       <div  style="text-align: center;">
@@ -87,37 +93,37 @@ export default [
       </div>
 
       I still wanted to design room patterns inside Unity's editor, which I tweaked using Gizmos and Editor Scripts, facilitating the level design. Each room could have 0-n exits, on which other rooms' entrances would be plugged in. I would also need to have some constraints such as maximum depth, mandatory rooms to spawn, etc.
-      This script took a lot of time and iteration to be made. In the end, it uses a mix of iterative and recursive functions, as well as a "blueprint" logic to avoid instantiating too many room patterns during its execution, which proved to be too demanding for the weaker mobile devices the game was expected to run on.
+      This world generation script took a lot of work and several major iterations to be both functionnal, performant and configurable. In the end, it uses a mix of iterative and recursive functions, as well as a "blueprint" logic to avoid instantiating too many room patterns during its execution, which proved to be too demanding for the weaker mobile devices the game was expected to run on.
          `),
          new ProjectData("project-tech-4", "Portfolio website", "img/projects/portfolio.png","",
           `<a target="_blank"class=icon href="https://github.com/Rouli-M/rouli-m.github.io">
         <img title= "Source code on Github" src="img/icons/github.png" ></a>`,
     
-          `<div class="paragraph"> Little portfolio website you're browsing right now. Made with Vue.js, source code available on github </div>`,
+          `<div class="paragraph"> Little portfolio website you're browsing right now. Made with Vue.js, source code available on GitHub </div>`,
           ` `),
     new ProjectData("project-tech3", "Homemade Physic System", "img/tech/physics_thumbnail.png","",
       ``,
-      `Custom lightweight C# 2D physics system I made for my mobile games`,
+      `Custom lightweight C# 2D physics system I made for mobile games`,
       `Before using Unity, I was working mainly with MonoGame, which is a Mono C# open source framework that has been used for commercial games like <i>Celeste</i> or <i>Stardew Valley</i>.
-      Unlike Unity or Godot, MonoGame doesn't come with a physics engine, a sprite class, or even an editor: everything has to be made from craft using C#, including development tools. 
+      Unlike Unity or Godot, MonoGame doesn't come with a physics engine, a sprite class, or even an editor: everything has to be made from scratch using C#, including development tools. 
       <br> <br>
       <div  style="text-align: center;">
       <img title= "Plant Down use this physics system" src="img/projects/oslmgv.png"/>
       </div>
 
-      I created a set of class that allowed me to have a simple but robust 2D physics system. This system only supports AABB (axis aligned bounding boxes), making the computation and overall logic a lot easier than in modern physics system (which allow for rotation and fancier collider shapes).
+      I created a set of classes that allowed me to have a simple but robust 2D physics system. This system only supports AABB (axis aligned bounding boxes), making the computation and overall logic a lot easier than in modern physics system (which allow for rotation and fancier collider shapes).
       I reused and upgraded this physic system accross several projects, from Mask Up to Plant Down. In it's latest iteration, I added a debug menu and editor, improving the level design workflow and debugging. 
       `),
-        new ProjectData("project-tech-5", "Interactive Board for Gemo", "img/tech/gemo_thumbnail.png","img/tech/gemo.gif",
+        new ProjectData("project-tech-5", "Interactive Board for Gémo", "img/tech/gemo_thumbnail.png","img/tech/gemo.gif",
           ``,
-          `Physical installation made at Design Factory 2022. Hardware and software project, Python & C with Arduino`,
+          `Physical installation made at Design Factory 2022, Python & C with Arduino`,
           `<i>Design Factory</i> is an interdisciplinary innovation program that focuses on addressing real-world challenges through a combination of design, engineering, and social sciences.
-          I was a participant of the 2022 edition of Design Factory, where we met with Gemo, a major actor of shoe retailer in France. They tasked us with a mission: making the offline shoe-buying experience more engaging for parents and children.
+          I participated in the 2022 edition of the <i>Design Factory</i>, where we collaborated with Gémo, a leading shoe retailer in France. Their challenge for us: to make the offline shoe-shopping experience more engaging for both parents and children.
           <br>
           <br>
           <img title:"Gemo prototype" src="img/tech/gemo_proto0.png">
           <br>
-          During the initial phase, we developed several prototypes. Among them, only one was chosen by Gemo for further development, which we subsequently brought to life as a physical prototype. Our solution: a playful and interactive panel designed to be installed directly in the shop. It allows customers to test their shoes by walking on an illuminated panel. For the frame, we opted for wood, while the surface was crafted using semi-transparent plastic. As for the hardware, we integrated addressable LED strips controlled by an Arduino.
+          During the initial phase, we developed several prototypes. Among them, only one was chosen by Gémo for further development, which we subsequently brought to life as a physical prototype. Our solution: a playful and interactive panel designed to be installed directly in the shop. It allows customers to test their shoes by walking on an illuminated panel. For the frame, we opted for wood, while the surface was crafted using semi-transparent plastic. As for the hardware, we integrated addressable LED strips controlled by an Arduino.
           
           <br> <br>
           <div  style="text-align: center;">
@@ -133,52 +139,10 @@ export default [
           <li> Desired color 
           </ul>
           This code would output the C program that would then run directly on the arduino card.
-          Here's one example of generated code:
+          Here's a sample of generated code:
           <pre> 
           <code>
             #include <PololuLedStrip.h>
-
-            // Create an ledStrip object and specify the pin it will use.
-            PololuLedStrip<2> ledStrip1;
-            PololuLedStrip<3> ledStrip2;
-            PololuLedStrip<4> ledStrip3;
-            PololuLedStrip<5> ledStrip4;
-
-            #define TOTAL_LED_COUNT 60 // CHANGE THIS to match the number of leds connected. One band = 60 leds
-            #define PANEL_COUNT 5 // CHANGE THIS to match the number of panel/buttons connected
-            int panel_on_x = 0;
-            int panel_on_y = 0; 
-            int buttons_pin_strip1[PANEL_COUNT] =  {31, 32, 33, 34, 35}; // CHANGE THIS to add the pin of each button (physical adress)
-            int buttons_pin_strip2[PANEL_COUNT] =  {36, 37, 38, 39, 40}; 
-            int buttons_pin_strip3[PANEL_COUNT] =  {41, 42, 43, 44, 45}; 
-            int buttons_pin_strip4[PANEL_COUNT] =  {46, 47, 48, 49, 50}; 
-            rgb_color all_black[TOTAL_LED_COUNT];
-
-            int buttons_values_strip1[PANEL_COUNT]; // values of each buttons
-            int buttons_values_strip2[PANEL_COUNT];
-            int buttons_values_strip3[PANEL_COUNT];
-            int buttons_values_strip4[PANEL_COUNT];
-
-            void setup() {
-                Serial.begin(9600);
-                Serial.print(257);
-
-                for(uint16_t i = 0; i < TOTAL_LED_COUNT; i++)
-                {
-                    all_black[i-1] = rgb_color(0,0,0);
-                }
-              
-                for(int i = 0; i < PANEL_COUNT; i++)
-                {
-                  // set each button input
-                  pinMode(buttons_pin_strip1[i], INPUT_PULLUP);
-                  pinMode(buttons_pin_strip2[i], INPUT_PULLUP);
-                  pinMode(buttons_pin_strip3[i], INPUT_PULLUP);
-                  pinMode(buttons_pin_strip4[i], INPUT_PULLUP);
-                }  
-                ResetLeds();
-                UpdatePanels();
-                }
 
             void loop() { 
                 for(int i = 0; i < PANEL_COUNT; i++)
@@ -189,11 +153,8 @@ export default [
                   buttons_values_strip3[i] = digitalRead(buttons_pin_strip3[i]);
                   buttons_values_strip4[i] = digitalRead(buttons_pin_strip4[i]);
                 }
-                
                 UpdateLogic();
-                //WriteColor(60, rgb_color(255, 255, 255));
                 UpdatePanels();
-                
             }
 
             void ResetLeds() /* Shut down all leds */
@@ -246,20 +207,6 @@ export default [
                 else if(panel_on_x == 2) ledStrip3.write(colors, TOTAL_LED_COUNT);
                 else ledStrip4.write(colors, TOTAL_LED_COUNT);
             }
-
-            void WriteColor(int n, rgb_color color) /* set the first n leds to color */
-            {
-                rgb_color colors[TOTAL_LED_COUNT];
-                for(uint16_t i = 0; i < n; i++)
-                {
-                  colors[i] = color;
-                }    
-                ledStrip1.write(colors, n);
-                ledStrip2.write(colors, n);
-                ledStrip3.write(colors, n);
-                ledStrip4.write(colors, n);
-            }
-
           </code>
           </pre>
           `),
