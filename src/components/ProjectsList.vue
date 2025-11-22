@@ -1,8 +1,7 @@
 <template>
     <div>
       <div class="projects-list">
-		<template v-for="project in projects" :key="project.id">
-  			<div class="project-item" :class="{ 'wide': project.isWide, 'high': project.isHigh }">
+      <div class="project-item" v-for="project in projects" :key="project.id" :class="{ 'wide': project.isWide, 'high': project.isHigh }">
                 <div class="project-item-image"  @mouseover="hoverOver(project)" @mouseout="hoverOut(project)" :style="backgroundImageStyle(project)">
                 </div>
 
@@ -20,7 +19,6 @@
               </div>
 
           </div>
-        </template>
       </div>
 
       <ProjectDetailsOverlay
@@ -37,7 +35,7 @@
 <script lang="ts">
 import Vue from "vue";
 import ProjectDetailsOverlay from "@/components/ProjectDetailsOverlay.vue";
-import ProjectData from "@/data/ProjectData.ts";
+import ProjectData from "@/data/ProjectData";
 
 export default Vue.extend({
   name: "ProjectsList",
@@ -45,7 +43,10 @@ export default Vue.extend({
     ProjectDetailsOverlay,
   },
   props: {
-    projects: Array
+    projects: {
+      type: Array as () => ProjectData[],
+      required: true,
+    }
   },
   data: function () {
     return {

@@ -11,7 +11,7 @@
     <div class="paragraph">
       <h2>About me</h2> 
       <div>
-        My name is Martin Loiseau, AKA Rouli, and I'm a game developer based in Paris. Welcome to my portfolio website!
+        My name is Martin Loiseau, AKA Rouli, and I'm a creative developer based in Paris. Welcome to my portfolio website!
       </div>
       <br>
       <div>
@@ -23,11 +23,12 @@
       </div>
       <br>
       <div>
-       I worked on <router-link to="/game-projects">many games</router-link>, from little side projects to fully fleshed solo indie releases. I also worked as a serious game designer and developer at Urssaf for two years.
+       I worked on <router-link to="/game-projects">several games</router-link>, from small side projects to fully fleshed indie releases. I also worked as a serious game designer and developer at <b>Urssaf</b> for two years.
       </div>
-
-      <div style="margin-top: 40px;">I'm <strong>currently looking for a job</strong> as a game developer or real-time interactive engineer.</div>
       <br>
+      <div>
+        I'm currently employed as an interactive developer at <b>Onepoint</b>, where I work on various innovative and playful solutions for different clients.
+      </div>
 
       <div>
         <h2>Resume</h2>
