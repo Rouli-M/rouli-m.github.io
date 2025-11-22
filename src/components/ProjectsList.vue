@@ -1,9 +1,8 @@
 <template>
     <div>
       <div class="projects-list">
-        <template v-for="project in projects">
-          <div :key="project.id" class="project-item" :class="{ 'wide': project.isWide, 'high': project.isHigh }">
-
+		<template v-for="project in projects" :key="project.id">
+  			<div class="project-item" :class="{ 'wide': project.isWide, 'high': project.isHigh }">
                 <div class="project-item-image"  @mouseover="hoverOver(project)" @mouseout="hoverOut(project)" :style="backgroundImageStyle(project)">
                 </div>
 
