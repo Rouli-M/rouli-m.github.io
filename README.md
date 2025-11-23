@@ -12,7 +12,7 @@ I used [schouffy/gamedev-portfolio](https://github.com/schouffy/gamedev-portfoli
 
 To start the local server and preview the change locally, use `npm run serve`
 
-To deploy the website, run the deploy script, then push the build result (located inside the dist folder) to the proper branch of the repo, which is linked to the github page url. The website may take a few minutes to properly reflect the changes.
+To deploy the website, run the deploy script, then push the build result (located inside the dist folder) to the proper branch of the repo, which is linked to the github page url. The website may take a few minutes to properly reflect the changes.?
 ```
 sudo ./deploy.sh
 cd dist/

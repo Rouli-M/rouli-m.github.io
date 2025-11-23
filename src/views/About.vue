@@ -27,9 +27,9 @@
       </div>
       <br>
       <div>
-        I'm currently employed as an interactive developer at <b>Onepoint</b>, where I work on various innovative and playful solutions for different clients.
+        I'm currently employed as an interactive developer at <b>Onepoint</b>, where I work on various innovative or playful solutions for diverse clients.
       </div>
-
+      <br>
       <div>
         <h2>Resume</h2>
         <!--
@@ -62,6 +62,11 @@
 .paragraph {
   max-width: 700px;
   margin-bottom: 20px;
+}
+
+.download-link {
+  float: left;
+  margin: 020px 20px 0px 0; /* top right bottom left */
 }
 
 .welcome_photo {
