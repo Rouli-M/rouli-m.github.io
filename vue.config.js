@@ -18,5 +18,6 @@ module.exports = {
         poll: 1000
       }
     } : {})
-  }
+  },
+  publicPath: process.env.NODE_ENV === "production" ? "/portfolio/" : "/",
 };
