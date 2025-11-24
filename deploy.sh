@@ -3,7 +3,8 @@
 # abort on errors
 set -e
 
-# build
+# build. export the var so that it works on ghpages
+export PUBLIC_PATH=/portfolio/
 npm run build
 
 # navigate into the build output directory
